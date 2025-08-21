@@ -1,7 +1,7 @@
 const likeElement = document.getElementById("likes");
 
-const stenUnblockedAPILikes = "https://stenunblockedserver-c3acd8e9110f.herokuapp.com/";
-const stenUnblockedAPIViews = "https://stenunblockedserver-c3acd8e9110f.herokuapp.com/views/"
+const stenUnblockedAPILikes = "https://6c937d7f989e.ngrok-free.app/";
+const stenUnblockedAPIViews = "https://6c937d7f989e.ngrok-free.app/views/"
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
