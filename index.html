@@ -176,6 +176,8 @@ function clickDownArrow(el) {
 </script>
 
 <script>
+const api_url = 'https://6c937d7f989e.ngrok-free.app';
+
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -206,7 +208,7 @@ if (getCookie("lastSorting")==="") {
 }
 
 function getAllLikes(cb) {
-	let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=all';
+	let url = api_url + '/like?game=all';
     const xml = new XMLHttpRequest();
     xml.open("GET", url, true);
 
@@ -220,7 +222,7 @@ function getAllLikes(cb) {
     }});
 }
 function getLikes(game, cb) {
-	let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=' + encodeURIComponent(game);
+	let url = api_url + '/like?game=' + encodeURIComponent(game);
     const xml = new XMLHttpRequest();
     xml.open("GET", url, true);
 
@@ -244,7 +246,7 @@ function likez(game, cb) {
         return;
     }
 	
-    let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=' + encodeURIComponent(game);
+    let url = api_url + '/like?game=' + encodeURIComponent(game);
     const xml = new XMLHttpRequest();
     xml.open("POST", url, true);
     xml.send(null);
@@ -417,7 +419,7 @@ function sort_def() {
 }
 sort_def(); // när servern är avstängd
 var likes = getAllLikes(function(_likes) {
-  let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=all';
+  let url = 'https://6c937d7f989e.ngrok-free.app/like?game=all';
   likes = _likes;
 let ss = getCookie("lastSorting");
 let sortcon = document.getElementById("sort-container");
@@ -461,13 +463,6 @@ else if (enabled == "0") {
 } else {
 	cookieElement.style.display = '';
 }
-</script>
-<script>
-(function(){
-  let xml = new XMLHttpRequest();
-  xml.open('POST', 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/views/view-game', true);
-  xml.send(null);
-})();
 </script>
 
 <br><hr><br>
